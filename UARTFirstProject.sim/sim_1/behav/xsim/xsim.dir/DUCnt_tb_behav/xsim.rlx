@@ -1,0 +1,12 @@
+
+{ 
+    crc :  10792269403688733766  , 
+    ccp_crc :  0  , 
+    cmdline : " -wto 0f62a9e668b943d5b349f18dd1998e58 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L myLib -L secureip --snapshot DUCnt_tb_behav xil_defaultlib.DUCnt_tb" , 
+    buildDate : "Nov 18 2020" , 
+    buildTime : "09:47:47" , 
+    linkCmd : "C:\\Xilinx\\Vivado\\2020.2\\data\\..\\tps\\mingw\\6.2.0\\win64.o\\nt\\bin\\gcc.exe -Wa,-W  -O -Wl,--stack,104857600 -o \"xsim.dir/DUCnt_tb_behav/xsimk.exe\"   \"xsim.dir/DUCnt_tb_behav/obj/xsim_0.win64.obj\" \"xsim.dir/DUCnt_tb_behav/obj/xsim_1.win64.obj\" -L\"C:\\Xilinx\\Vivado\\2020.2\\lib\\win64.o\" -lrdi_simulator_kernel   -lrdi_simbridge_kernel" , 
+    aggregate_nets : 
+    [ 
+    ] 
+} 

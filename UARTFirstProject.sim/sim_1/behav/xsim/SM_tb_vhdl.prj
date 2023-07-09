@@ -1,0 +1,10 @@
+# compile vhdl design source files
+vhdl myLib  \
+"../../../../../PackagesVHDL/PackagesVHDL.srcs/sources_1/new/arithFx_p.vhd" \
+
+vhdl xil_defaultlib  \
+"../../../../UARTFirstProject.srcs/sources_1/new/SM_s.vhd" \
+"../../../../UARTFirstProject.srcs/sim_1/new/SM_tb.vhd" \
+
+# Do not sort compile order
+nosort

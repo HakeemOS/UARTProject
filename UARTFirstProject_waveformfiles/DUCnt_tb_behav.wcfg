@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="DUCnt_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="DUCnt_tb" />
+            <top_module name="parapcr_p" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="2000001fs"></ZoomEndTime>
+      <Cursor1Time time="1380000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="132"></NameColumnWidth>
+      <ValueColumnWidth column_width="63"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="14" />
+   <wvobject fp_name="/DUCnt_tb/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DUCnt_tb/loadFlag" type="logic">
+      <obj_property name="ElementShortName">loadFlag</obj_property>
+      <obj_property name="ObjectShortName">loadFlag</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DUCnt_tb/shiftFlag" type="logic">
+      <obj_property name="ElementShortName">shiftFlag</obj_property>
+      <obj_property name="ObjectShortName">shiftFlag</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DUCnt_tb/shiftDone" type="logic">
+      <obj_property name="ElementShortName">shiftDone</obj_property>
+      <obj_property name="ObjectShortName">shiftDone</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DUCnt_tb/serialOUT" type="logic">
+      <obj_property name="ElementShortName">serialOUT</obj_property>
+      <obj_property name="ObjectShortName">serialOUT</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DUCnt_tb/data" type="array">
+      <obj_property name="ElementShortName">data[7:0]</obj_property>
+      <obj_property name="ObjectShortName">data[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DUCnt_tb/clk_stop" type="other">
+      <obj_property name="ElementShortName">clk_stop</obj_property>
+      <obj_property name="ObjectShortName">clk_stop</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DUCnt_tb/clk_period" type="other">
+      <obj_property name="ElementShortName">clk_period</obj_property>
+      <obj_property name="ObjectShortName">clk_period</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DUCnt_tb/uut/cnt0/bitCount" type="other">
+      <obj_property name="ElementShortName">bitCount</obj_property>
+      <obj_property name="ObjectShortName">bitCount</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DUCnt_tb/uut/DU0/shiftCnt" type="other">
+      <obj_property name="ElementShortName">shiftCnt</obj_property>
+      <obj_property name="ObjectShortName">shiftCnt</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DUCnt_tb/uut/DU0/dataPKT" type="array">
+      <obj_property name="ElementShortName">dataPKT[9:0]</obj_property>
+      <obj_property name="ObjectShortName">dataPKT[9:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DUCnt_tb/uut/DU0/tempPKT" type="array">
+      <obj_property name="ElementShortName">tempPKT[9:0]</obj_property>
+      <obj_property name="ObjectShortName">tempPKT[9:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DUCnt_tb/uut/cnt0/shiftData" type="logic">
+      <obj_property name="ElementShortName">shiftData</obj_property>
+      <obj_property name="ObjectShortName">shiftData</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DUCnt_tb/uut/DU0/setFlag" type="logic">
+      <obj_property name="ElementShortName">setFlag</obj_property>
+      <obj_property name="ObjectShortName">setFlag</obj_property>
+   </wvobject>
+</wave_config>
