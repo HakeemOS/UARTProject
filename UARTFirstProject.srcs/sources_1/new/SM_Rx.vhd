@@ -36,9 +36,10 @@ entity SM_Rx is
             startO : in std_logic; 
             startRead : in std_logic; 
             doneRead : in std_logic; 
+            validated : in std_logic;
+            invalid : in std_logic; 
             rst : in std_logic; 
             setupFlag : out std_logic; 
-            readFlag : out std_logic; 
             RxDone : out std_logic 
     );
 end SM_Rx;
@@ -50,12 +51,11 @@ type states is (init, setup, readbit, validate);
 signal stt : states := init; 
 signal RxDone_t : std_logic := '0'; 
 signal setupData : std_logic := '0'; 
-signal readData : std_logic := '0'; 
 signal startSetup : std_logic := '0'; 
-signal validated : std_logic := '0'; 
+signal reading : std_logic := '0'; 
 
 begin
-    trns : process( clk, rst, startO )
+    trns : process( clk, rst, startSetup, startRead, doneRead, validated )
     begin
         if (rst = '1') then
             stt <= init; 
@@ -86,6 +86,12 @@ begin
                         else
                             stt <= init; 
                         end if ;
+                    elsif (invalid = '1') then
+                        if (startSetup = '1') then
+                            stt <= setup; 
+                        else
+                            stt <= init; 
+                        end if; 
                     end if ;
             end case ;
         end if ;
@@ -97,6 +103,7 @@ begin
         RxDone_t <= '0'; 
         startSetup <= '0'; 
         setupData <= '0'; 
+        reading <= '0'; 
 
         case( stt ) is
             when init =>
@@ -106,13 +113,14 @@ begin
                 end if ;                
             when setup => 
                 setupData <= '1'; 
+            when readbit => 
+                    reading <= '1'; 
             when others =>
-        
+                RxDone_t <= '1'; 
         end case ;
     end process ; -- output
 
     setupFlag <= setupData; 
-    readFlag <= readData; 
     RxDone <= RxDone_t; 
 
 end Behavioral;

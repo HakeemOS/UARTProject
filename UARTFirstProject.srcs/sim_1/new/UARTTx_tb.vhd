@@ -65,7 +65,7 @@ begin
         wait for clk_period/2; 
     end process ; -- clkproc
 
-    uut : UART_tx
+    uut : UART_Tx
     port map (
         clk => clk, 
         start => start, 

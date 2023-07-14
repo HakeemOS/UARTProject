@@ -1,0 +1,10 @@
+# compile vhdl design source files
+vhdl myLib  \
+"../../../../UARTFirstProject.srcs/sources_1/imports/new/paraPcr_p.vhd" \
+
+vhdl xil_defaultlib  \
+"../../../../UARTFirstProject.srcs/sources_1/new/RU_Rx.vhd" \
+"../../../../UARTFirstProject.srcs/sim_1/new/RU_tb.vhd" \
+
+# Do not sort compile order
+nosort

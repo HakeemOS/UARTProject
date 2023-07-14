@@ -1,2 +1,2 @@
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/squid/OneDrive/Documents/Vivado/2023/UARTFirstProject/UARTFirstProject.srcs/sources_1/new/readClk_Rx.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'readClk_Rx'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/squid/OneDrive/Documents/Vivado/2023/UARTFirstProject/UARTFirstProject.srcs/sim_1/new/RURxClk_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'RURxClk_tb'

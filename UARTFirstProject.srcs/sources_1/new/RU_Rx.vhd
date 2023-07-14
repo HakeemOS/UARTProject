@@ -42,6 +42,7 @@ entity RU_Rx is
             rst : in std_logic; 
             doneRead : out std_logic;
             validated : out std_logic; 
+            invalid : out std_logic; 
             data : out std_logic_vector (N-1 downto 0) 
     );
 end RU_Rx;
@@ -52,6 +53,7 @@ constant MaxBits : integer := N+2;
 
 signal doneRead_t : std_logic := '0'; 
 signal validated_t : std_logic := '0';
+signal invalid_t : std_logic := '0'; 
 signal reading : std_logic := '0'; 
 signal setFlag : std_logic := '0'; 
 signal zeroSig : std_logic := '0'; 
@@ -68,7 +70,8 @@ begin
             reading <= '0'; 
             doneRead_t <= '0';
             validated_t <= '0'; 
-            data_t <= '0'; 
+            invalid_t <= '0'; 
+            data_t <= (others => '0'); 
             setFlag <= '0'; 
             readCount <= 0; 
         elsif (rising_edge(clk)) then         
@@ -78,7 +81,7 @@ begin
                 if (readCount = MaxBits) then
                     reading <= '0'; 
                     doneRead_t <= '1'; 
-                    readCount <= '0'; 
+                    readCount <= 0; 
                     setFlag <= '0'; 
                 elsif (readFlag = '1') then
                     nShReg(zeroSig, clk, TxData, tempPKT, dataPKT);
@@ -88,14 +91,20 @@ begin
                     tempPKT <= dataPKT;  
                     setFlag <= '0';   
                 end if ;
-            elsif (doneRead_t = '1' and validated_t = '0') then
-                if (dataPKT'high = '1' and dataPKT'low = '0') then
-                    validated_t <= '1'; 
-                    data_t <= dataPKT (N downto 1); 
-                end if ;
             elsif (validated_t = '1') then
                 validated_t <= '0'; 
                 doneRead_t <= '0'; 
+            elsif (invalid_t = '1') then
+                invalid_t <= '0';
+                doneRead_t <= '0'; 
+            elsif (doneRead_t = '1' and validated_t = '0') then
+                if (dataPKT(dataPKT'high) = '1' and dataPKT(dataPKT'low) = '0') then
+                    validated_t <= '1'; 
+                    data_t <= dataPKT (N downto 1); 
+                else 
+                    invalid_t <= '1'; 
+                    data_t <= "00000001"; 
+                end if ;
             end if; 
             
         end if ;
@@ -104,5 +113,6 @@ begin
 
     doneRead <= doneRead_t; 
     validated <= validated_t; 
+    invalid <= invalid_t; 
     data <= data_t;
 end Behavioral;

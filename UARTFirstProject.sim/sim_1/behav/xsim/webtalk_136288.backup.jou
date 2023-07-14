@@ -2,11 +2,11 @@
 # Webtalk v2020.2 (64-bit)
 # SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
 # IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-# Start of session at: Fri Jun 30 19:43:14 2023
-# Process ID: 53700
+# Start of session at: Mon Jul 10 18:43:10 2023
+# Process ID: 136288
 # Current directory: C:/Users/squid/OneDrive/Documents/Vivado/2023/UARTFirstProject/UARTFirstProject.sim/sim_1/behav/xsim
-# Command line: wbtcv.exe -mode batch -source C:/Users/squid/OneDrive/Documents/Vivado/2023/UARTFirstProject/UARTFirstProject.sim/sim_1/behav/xsim/xsim.dir/UARTTx_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+# Command line: wbtcv.exe -mode batch -source C:/Users/squid/OneDrive/Documents/Vivado/2023/UARTFirstProject/UARTFirstProject.sim/sim_1/behav/xsim/xsim.dir/RU_tb_behav/webtalk/xsim_webtalk.tcl -notrace
 # Log file: C:/Users/squid/OneDrive/Documents/Vivado/2023/UARTFirstProject/UARTFirstProject.sim/sim_1/behav/xsim/webtalk.log
 # Journal file: C:/Users/squid/OneDrive/Documents/Vivado/2023/UARTFirstProject/UARTFirstProject.sim/sim_1/behav/xsim\webtalk.jou
 #-----------------------------------------------------------
-source C:/Users/squid/OneDrive/Documents/Vivado/2023/UARTFirstProject/UARTFirstProject.sim/sim_1/behav/xsim/xsim.dir/UARTTx_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+source C:/Users/squid/OneDrive/Documents/Vivado/2023/UARTFirstProject/UARTFirstProject.sim/sim_1/behav/xsim/xsim.dir/RU_tb_behav/webtalk/xsim_webtalk.tcl -notrace
