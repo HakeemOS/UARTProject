@@ -46,13 +46,13 @@ end SM_Rx;
 
 architecture Behavioral of SM_Rx is
     
-type states is (init, setup, readbit, validate); 
+type states is (init, setup, reading, validating ); 
 
 signal stt : states := init; 
 signal RxDone_t : std_logic := '0'; 
 signal setupData : std_logic := '0'; 
 signal startSetup : std_logic := '0'; 
-signal reading : std_logic := '0'; 
+signal readingFlag : std_logic := '0'; 
 
 begin
     trns : process( clk, rst, startSetup, startRead, doneRead, validated )
@@ -69,15 +69,15 @@ begin
                     end if ;
                 when setup => 
                     if (startRead = '1') then
-                        stt <= readbit; 
+                        stt <= reading; 
                     else
                         stt <= setup; 
                     end if ;
-                when readbit => 
+                when reading => 
                     if (doneRead = '1') then
-                        stt <= validate;  
+                        stt <= validating ;  
                     else
-                        stt <= readbit; 
+                        stt <= reading; 
                     end if ;
                 when others =>
                     if (validated = '1') then
@@ -103,7 +103,7 @@ begin
         RxDone_t <= '0'; 
         startSetup <= '0'; 
         setupData <= '0'; 
-        reading <= '0'; 
+        readingFlag <= '0'; 
 
         case( stt ) is
             when init =>
@@ -113,8 +113,8 @@ begin
                 end if ;                
             when setup => 
                 setupData <= '1'; 
-            when readbit => 
-                    reading <= '1'; 
+            when reading => 
+                    readingFlag <= '1'; 
             when others =>
                 RxDone_t <= '1'; 
         end case ;

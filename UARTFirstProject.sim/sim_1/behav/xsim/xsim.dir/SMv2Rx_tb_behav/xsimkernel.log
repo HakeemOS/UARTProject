@@ -1,0 +1,7 @@
+Running: xsim.dir/SMv2Rx_tb_behav/xsimk.exe -simmode gui -wdb SMv2Rx_tb_behav.wdb -simrunnum 0 -socket 49304
+Design successfully loaded
+Design Loading Memory Usage: 8248 KB (Peak: 8248 KB)
+Design Loading CPU Usage: 15 ms
+Simulation completed
+Simulation Memory Usage: 8792 KB (Peak: 8792 KB)
+Simulation CPU Usage: 30 ms

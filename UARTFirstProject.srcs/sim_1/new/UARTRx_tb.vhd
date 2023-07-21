@@ -49,7 +49,7 @@ component UART_Rx is
     ); 
 end component; 
 
-signaL start, TxData, rst, validated, invalid, RxDone : std_logic; 
+signaL start, TxData, rst, validated, invalid, RxDone, clk : std_logic; 
 signal data : std_logic_vector (7 downto 0); 
 
 signal clk_period : time := 20ns; 
@@ -84,7 +84,55 @@ begin
         TxData <= '0'; 
         rst <= '0'; 
         
+        wait for 40ns; 
+
+        start <= '1'; 
+
         wait for 20ns; 
+
+        start <= '0'; 
+
+        wait for 40ns; 
+
+        TxData <= '0'; -- First 
+
+        wait for 80ns; 
+
+        TxData <= '0'; -- second 
+
+        wait for 80ns; 
+
+        TxData <= '1'; -- third
+
+        wait for 80ns; 
+
+        TxData <= '1'; -- fourth 
+
+        wait for 80ns; 
+
+        TxData <= '0'; --fifth 
+
+        wait for 80ns; 
+
+        TxData <= '1'; --sixth 
+
+        wait for 80ns; 
+
+        TxData <= '1'; -- seventh 
+
+        wait for 80ns; 
+
+        TxData <= '0'; -- eighth
+
+        wait for 80ns; 
+
+        TxData <= '1'; -- ninth 
+
+        wait for 80ns; 
+
+        TxData <= '1'; -- tenth
+
+        wait; 
         
     end process ; -- stim
 
